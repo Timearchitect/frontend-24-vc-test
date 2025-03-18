@@ -1,7 +1,22 @@
-.container{
-    display: flex;
+
+*{
+    box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container div{
+    border: #d85000;
+    border-radius: 10%;
+}
+
+img{
+    width: 150px;
+    height: 100px;
+}
 .footer{
     background-color: #d85000;
     border-radius: 10px;
