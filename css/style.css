@@ -12,6 +12,7 @@
 .container div{
     border:2px solid #d85000;
     border-radius: 6%;
+    width: 150px;
 }
 
 img{
