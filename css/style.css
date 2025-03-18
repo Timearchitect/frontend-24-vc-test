@@ -20,6 +20,11 @@ img{
     height: 200px;
     border-radius: 10%;
 }
+
+p{
+    justify-content: center;
+    text-align: center;
+}
 .footer{
     background-color: #d85000;
     border-radius: 10px;
