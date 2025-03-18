@@ -11,14 +11,19 @@
 
 .container div{
     border:2px solid #d85000;
-    border-radius: 6%;
-    width: 150px;
+    border-radius: 10%;
+    width: 250px;
 }
 
 img{
-    width: 150px;
-    height: 100px;
+    width: 100%;
+    height: 200px;
     border-radius: 10%;
+}
+
+p{
+    justify-content: center;
+    text-align: center;
 }
 .footer{
     background-color: #d85000;
