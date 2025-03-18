@@ -8,6 +8,11 @@
     justify-content: space-evenly;
 }
 
+.container div{
+    border: #d85000;
+    border-radius: 10%;
+}
+
 img{
     width: 150px;
     height: 100px;
