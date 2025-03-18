@@ -2,6 +2,7 @@
     display: flex;
 }
 
-body {
+.footer{
     background-color: #d85000;
+    border-radius: 10px;
 }
