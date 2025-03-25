@@ -27,6 +27,8 @@ img{
 
 img:hover{
     filter:brightness(150%);
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out;
 }
 img:hover{
     background-color: aqua;
