@@ -27,6 +27,9 @@ img{
 img:hover{
     filter:brightness(150%);
 }
+img:hover{
+    background-color: aqua;
+}
 
 p{
     justify-content: center;
