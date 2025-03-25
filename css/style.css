@@ -3,6 +3,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    --border-radius: 10px;
 }
 
 .container {
@@ -16,8 +17,8 @@
     border-radius: 10%;
     width: 250px;
 }
-.body{
-    background-color: red;
+body{
+    background-color: rgb(145, 88, 88);
 }
 
 img{
@@ -28,6 +29,11 @@ img{
 
 img:hover{
     filter:brightness(150%);
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out;
+}
+img:hover{
+    background-color: aqua;
 }
 
 p{
@@ -35,7 +41,7 @@ p{
     text-align: center;
 }
 .footer{
-    background-color: #d85000;
+    background-color: #ff00ff;
     border-radius: 10px;
 }
 
