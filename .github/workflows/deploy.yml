@@ -1,18 +1,18 @@
-name: Test GitHub Actions with config.js to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Trigger workflow on push to the main branch
+      - main  # Trigger the workflow on push to the main branch
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest  # Use a GitHub-hosted Ubuntu runner
 
     permissions:
-      contents: write    # Allow write access to the repository contents
-      pages: write       # Allow write access to GitHub Pages
-      id-token: write    # Ensure GITHUB_TOKEN has 'id-token: write' permission
+      contents: write  # Allow write access to the repository contents
+      pages: write     # Allow write access to GitHub Pages
+      id-token: write  # Ensure GITHUB_TOKEN has 'id-token: write' permission
 
     steps:
       # Checkout the repository
@@ -24,10 +24,6 @@ jobs:
         run: |
           echo "const API_KEY = '${{ secrets.API_KEY }}';" > config.js
           echo "API Key has been injected into config.js"  # This is just for logging
-
-      # Optional: Show the content of config.js to verify
-      - name: Show config.js content
-        run: cat config.js
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
