@@ -1,4 +1,4 @@
-name: Test GitHub Actions with config.js
+name: Test GitHub Actions with config.js to GitHub Pages
 
 on:
   push:
@@ -14,12 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Inject API Key into a config.js file (or any other data you want to inject)
+      # Inject API Key into a config.js file
       - name: Inject API Key into config.js
         run: |
           echo "const API_KEY = '${{ secrets.API_KEY }}';" > config.js
           echo "API Key has been injected into config.js"  # This is just for logging
 
-      # Optional: Print the content of config.js to verify
+      # Optional: Show the content of config.js to verify
       - name: Show config.js content
         run: cat config.js
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        with:
+          path: .  # Upload everything from the root directory
