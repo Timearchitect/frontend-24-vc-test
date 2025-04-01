@@ -23,7 +23,7 @@ jobs:
           echo "const API_KEY = '${{ secrets.API_KEY }}';" > public/config.js
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: public  # Ensure public folder is uploaded
 
