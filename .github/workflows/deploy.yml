@@ -1,4 +1,4 @@
-name: Test GitHub Actions
+name: Test GitHub Actions with config.js
 
 on:
   push:
@@ -14,6 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Print a simple message to verify the workflow runs
-      - name: Run a simple test
-        run: echo "Hello, GitHub Actions is working!"
+      # Inject API Key into a config.js file (or any other data you want to inject)
+      - name: Inject API Key into config.js
+        run: |
+          echo "const API_KEY = '${{ secrets.API_KEY }}';" > config.js
+          echo "API Key has been injected into config.js"  # This is just for logging
+
+      # Optional: Print the content of config.js to verify
+      - name: Show config.js content
+        run: cat config.js
