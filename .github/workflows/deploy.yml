@@ -22,13 +22,10 @@ jobs:
           mkdir -p public
           echo "const API_KEY = '${{ secrets.API_KEY }}';" > public/config.js
 
-      - name: Build your site (Optional, add this step if you have build steps)
-        run: echo "Build step, if needed"
-
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: public  # Upload the `public` folder to be deployed
+          path: public  # Upload the `public/` folder to be deployed
 
   deploy:
     runs-on: ubuntu-latest
