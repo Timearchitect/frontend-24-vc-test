@@ -9,6 +9,11 @@ jobs:
   test:
     runs-on: ubuntu-latest  # Use a GitHub-hosted Ubuntu runner
 
+    permissions:
+      contents: write    # Allow write access to the repository contents
+      pages: write       # Allow write access to GitHub Pages
+      id-token: write    # Ensure GITHUB_TOKEN has 'id-token: write' permission
+
     steps:
       # Checkout the repository
       - name: Checkout repository
