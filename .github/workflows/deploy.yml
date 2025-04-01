@@ -3,14 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the main branch
+      - main  # Trigger on push to main branch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Use a GitHub-hosted Ubuntu runner
+    runs-on: ubuntu-latest  # GitHub-hosted Ubuntu runner
 
     permissions:
-      contents: write  # Allow write access to the repository contents
+      contents: write  # Allow write access to repository contents
       pages: write     # Allow write access to GitHub Pages
       id-token: write  # Ensure GITHUB_TOKEN has 'id-token: write' permission
 
@@ -23,10 +23,17 @@ jobs:
       - name: Inject API Key into config.js
         run: |
           echo "const API_KEY = '${{ secrets.API_KEY }}';" > config.js
-          echo "API Key has been injected into config.js"  # This is just for logging
+          echo "API Key has been injected into config.js"
+
+      # Optional: Build your site (if needed)
+      # - name: Build your site (e.g., npm run build)
+
+      # Upload the files to be deployed (for example, root directory)
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: .  # Upload everything from the root directory
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
-        with:
-          path: .  # Upload everything from the root directory
